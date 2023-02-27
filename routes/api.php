@@ -21,7 +21,7 @@ use App\Http\Controllers\API\RM01;
 //     return $request->user();
 // });
 
-Route::prefix('rm01')->group(function(){
+Route::middleware(['cors'])->prefix('rm01')->group(function(){
     Route::get('penjab', [Penjab::class, 'index']);
     Route::get('poliklinik', [Poliklinik::class, 'index']);
     Route::post('save', [RM01::class, 'save']);
