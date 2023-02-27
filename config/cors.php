@@ -19,9 +19,9 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*', 'https://webapps.rsbhayangkaranganjuk.com'],
+    'allowed_origins' => ['*', 'https://webapps.rsbhayangkaranganjuk.com/'],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['https://webapps.rsbhayangkaranganjuk.com/'],
 
     'allowed_headers' => ['*'],
 
