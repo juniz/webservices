@@ -57,7 +57,6 @@ class RM01 extends Controller
                     'code' => 200,
                     'message' => 'Data Pendaftaran Berhasi disimpan'
                 ],
-                'data' => null,
             ], 200);
         }catch(\Exception $e){
             return response()->json([
@@ -66,7 +65,6 @@ class RM01 extends Controller
                     'code' => 500,
                     'message' => $e->getMessage() ?? 'Terjadi kesalahan pada server'
                 ],
-                'data' => null
             ], 500);
         }
     }
