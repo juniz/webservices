@@ -14,6 +14,7 @@ class RM01 extends Controller
         try{
             DB::beginTransaction();
             DB::table('temp_pasien')->insert([
+                'nik' => $data['nik'],
                 'nama' => $data['nama'],
                 'alamat' => $data['alamat'],
                 'no_telp' => $data['no_telp'],
@@ -51,6 +52,7 @@ class RM01 extends Controller
             ]);
             DB::commit();
             return response()->json([
+                'error' => false,
                 'meta' => [
                     'code' => 200,
                     'message' => 'Data Pendaftaran Berhasi disimpan'
@@ -59,6 +61,7 @@ class RM01 extends Controller
             ], 200);
         }catch(\Exception $e){
             return response()->json([
+                'error' => true,
                 'meta' => [
                     'code' => 500,
                     'message' => $e->getMessage() ?? 'Terjadi kesalahan pada server'
